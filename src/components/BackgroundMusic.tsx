@@ -2,7 +2,7 @@ const BackgroundMusic = () => {
     return (
         <audio
             className=''
-            src="../media/Intro.mp3"
+            src="https://invitacioncarlosykelly.com.co/media/Intro.mp3"
             autoPlay={true}
             loop={true}
         />
