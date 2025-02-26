@@ -1,5 +1,5 @@
 import { useEffect, useState, type FC } from "react";
-import { Modal } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { turso } from "../database";
 import type { Row } from "@libsql/client";
 import Swal from "sweetalert2";
@@ -32,9 +32,7 @@ export const ModalAsistencia: FC<Props> = ({ show, handleClose }) => {
     }
 
     useEffect(() => {
-        clear();
-
-        if (doc === '') return;
+        if (doc === '') {clear(); return};
         db(doc).then((res) => {
             if (res.rows.length === 0) {
                 setUser(null)
@@ -42,7 +40,7 @@ export const ModalAsistencia: FC<Props> = ({ show, handleClose }) => {
             }
             const user = res.rows;
 
-            if (user[0].ceremonia !== ''){
+            if (user[0].ceremonia !== '') {
                 setCeremonia(true)
                 setFiesta(true)
                 setConfirmed(true)
@@ -76,10 +74,18 @@ export const ModalAsistencia: FC<Props> = ({ show, handleClose }) => {
     }
 
     return (
-        <Modal show={show} onHide={close} id="modalAsistencia" tabIndex={-1} style={{ display: `${show ? 'block' : 'none'}` }}>
-            <div className="modal-dialog modal-dialog-centered">
+        <div className={`modal fade ${show ? 'show' : ''}`} id="modalAsistencia" role="dialog" tabIndex={-1} style={{ display: `${show ? 'block' : 'none'}` }}>
+            <div className="modal-dialog modal-lg modal-dialog-centered">
                 <div className="modal-content">
+                    <div className="img-top-modal d-flex justify-content-center align-items-start">
+                        <button type="button" className="close border-0" onClick={close} data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
 
+                        <div className="white-circle-icon">
+                            <img className="" src="https://www.fixdate.io/modelo-invitacion/30/img/img_circuloCeremonia.svg" alt="" />
+                        </div>
+                    </div>
                     <div className="modal-header">
                         <h5 className="modal-title">¿Confirma tu invitación?</h5>
                     </div>
@@ -93,68 +99,58 @@ export const ModalAsistencia: FC<Props> = ({ show, handleClose }) => {
 
                                 <input id="eventoAsistencia" type="hidden" name="evento" value="Ceremonia" />
                             </form>
-                        </div>
 
-                        <div>
-                            {user && user.length > 0 && (
-                                <div className="formulario-content fw-bold title mt-4 mb-4">
-                                    {`Cupo Máximo: ${user[0].cupomaximo}`}
+                            <div className="row">
+                                <Col>
+                                    {user && user.length > 0 && (
+                                        <div className="fw-bold fs-3 title">
+                                            {`Cupo Máximo: ${user[0].cupomaximo}`}
+                                        </div>
+                                    )}
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    {user && user.length > 0 && (
+                                        <div className="">
+                                            {user.map((item) => (
+                                                <div className="fw-bold fs-3 mb-0 mt-0">
+                                                    <span className="fs-6 d-flex align-items-center">{'Invitado: '}<span className="title small fs-3">{`  ${item.nombre}`}</span></span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </Col>
+                            </div>
+
+                            {hasInvitation && !confirmed && (
+                                <div className="text-start w-100">
+                                    <h2 className="title fs-4 text-center w-100 mb-1">¿A qué evento asistirás?</h2>
+                                    <div className="form-check form-switch d-flex align-items-center justify-content-start mb-1">
+                                        <button type="button" onClick={() => setFiesta(!fiesta)} className="text-capitalize boton me-4"> Fiesta</button>
+                                        <strong className="fs-6">{fiesta ? 'Si' : 'No'}</strong>
+                                    </div>
+
+                                    <div className="form-check form-switch d-flex align-items-center justify-content-start">
+                                        <button type="button" onClick={() => setCeremonia(!ceremonia)} className="boton text-capitalize me-4"> Ceremonia</button>
+                                        <strong className="fs-6">{ceremonia ? 'Si' : 'No'}</strong>
+                                    </div>
+                                </div>
+                            )}
+
+                            {confirmed && (
+                                <div className="text-start mt-3 w-100">
+                                    <h2 className="title fs-1 text-center w-100 mb-3">Ya confirmaste tu asistencia</h2>
                                 </div>
                             )}
                         </div>
-
-                        {user && user.length > 0 && (
-                            <div className="formulario-content d-flex justify-content-center">
-                                <table>
-                                    <tbody>
-                                        {user.map((item) => (
-                                            <tr key={`${item.incremento}`}>
-                                                <th className="fs-4">Invitado:{}</th>
-                                                <td><h6 className="title small fs-1">{`  ${item.nombre}`}</h6></td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        )}
-
-                        {hasInvitation && !confirmed && (
-                            <div className="text-start mt-5 w-100">
-                                <h2 className="title text-center w-100 mb-3">¿A qué evento asistirás?</h2>
-                                <div className="form-check form-switch d-flex align-items-center justify-content-between mb-3">
-                                    <button type="button" onClick={() => setFiesta(!fiesta)} className="boton w-50 m-0 p-0 text-capitalize fs-1 title"> Fiesta</button>
-                                    <strong className="fs-3">{fiesta ? 'Si' : 'No'}</strong>
-                                </div>
-
-                                <div className="form-check form-switch d-flex align-items-center justify-content-between">
-                                    <button type="button" onClick={() => setCeremonia(!ceremonia)} className="boton w-50 m-0 p-0 fs-1 text-capitalize title"> Ceremonia</button>
-                                    <strong className="fs-3">{ceremonia ? 'Si' : 'No'}</strong>
-                                </div>
-                            </div>
-                        )}
-                        {confirmed && (
-                            <div className="text-start mt-5 w-100">
-                                <h2 className="title text-center w-100 mb-3">Ya confirmaste tu asistencia</h2>
-                                <div className="form-check form-switch d-flex align-items-center justify-content-between mb-3">
-                                    <button type="button" className="boton w-50 m-0 p-0 text-capitalize fs-1 title"> Fiesta</button>
-                                    <strong className="fs-3">{fiesta ? 'Si' : 'No'}</strong>
-                                </div>
-
-                                <div className="form-check form-switch d-flex align-items-center justify-content-between">
-                                    <button type="button" className="boton w-50 m-0 p-0 fs-1 text-capitalize title"> Ceremonia</button>
-                                    <strong className="fs-3">{ceremonia ? 'Si' : 'No'}</strong>
-                                </div>
-                            </div>
-                        )}
                     </div>
 
-                    {hasInvitation &&  !confirmed && (
+                    {hasInvitation && !confirmed && (
                         <div className="modal-footer">
-                            <button onClick={() => confirmAssist()} type="button" id="sendAsistencia" className="boton">{hasInvitation ? 'Confirmar Asistencia' : 'Consultar'}</button>
+                            <button onClick={() => confirmAssist()} type="button" id="sendAsistencia" className="boton">{hasInvitation ? 'Confirmar' : 'Consultar'}</button>
                         </div>
                     )}
                 </div>
             </div>
-        </Modal>
+        </div>
     )
 }

@@ -5,14 +5,14 @@ export const Portada = () => {
     return (
         <section className="portada">
             <FlorIzqSup />
-            <FlorDerInf />            
+            <FlorDerInf />
             <FlorIzqInf />
 
             <div className="container">
                 <div className="row d-flex align-items-center justify-content-center">
                     <div className="content-portada text-center">
                         <div className="box-nombres-fecha-portada">
-                            <span className="fecha">31.05.2025</span>
+                            <span className="fecha">{' 31.05.2025 '}</span>
                             <h1>
                                 Carlos{' '}
                                 <br className="d-md-none" />

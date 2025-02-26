@@ -24,17 +24,18 @@ export const Instagram = () => {
               #LovebaCK
             </a>
           </div>
-
           <br />
 
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.instagram.com/"
-            className="boton w-25"
-          >
-            Ver en Instagram
-          </a>
+          <div className="col mt-4">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.instagram.com/"
+              className="boton w-100"
+            >
+              Ver en Instagram
+            </a>
+          </div>
         </div>
       </div>
     </section>

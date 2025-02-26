@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import { ModalAsistencia } from './components/ModalAsistencia';
 import { useState } from 'react';
 import useDeviceDetect from './useDeviceDetect';
+import BackgroundMusic from './components/BackgroundMusic';
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <>
+      <BackgroundMusic />
       <ModalAsistencia show={show} handleClose={handleClose} />
       {isDesktop && (
         <div

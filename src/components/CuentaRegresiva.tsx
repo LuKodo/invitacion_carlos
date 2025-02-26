@@ -10,7 +10,7 @@ export const CuentaRegresiva = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-05-31T17:30:00');
+    const targetDate = new Date('2025-05-31T17:00:00');
 
     const calculateTimeLeft = () => {
       const now = new Date();
