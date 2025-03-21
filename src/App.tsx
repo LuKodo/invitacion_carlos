@@ -34,18 +34,16 @@ const App = () => {
             overflow: "hidden",
             transform: "translate3d(0px, 0px, 0px)",
             height: "776.4px",
-            width: "1526px"
+            width: "100%"
           }}>
           <img
             className="parallax-slider"
             alt=''
             src="images/galery/IMG_0237.png"
             style={{
-              transform: "translate3d(0px, -103px, 0px)",
+              transform: "translate3d(0px, -0px, 0px)",
               position: "absolute",
-              height: "858px",
-              width: "1526px",
-              maxWidth: "none"
+              width: "100%",
             }}
           />
         </div>

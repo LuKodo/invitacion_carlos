@@ -1,5 +1,5 @@
 import ScrollArrow from "./Animations/ScrollArrow";
-import {FlorIzqSup, FlorDerInf, FlorIzqInf} from "./Animations/Flores";
+import { FlorIzqSup, FlorDerInf, FlorIzqInf } from "./Animations/Flores";
 
 export const Portada = () => {
     return (
@@ -20,13 +20,13 @@ export const Portada = () => {
                                 <br className="d-md-none" />
                                 {' '}Kelly
                             </h1>
-                            <div className="line"/>
+                            <div className="line" />
                         </div>
 
                         <div className="box-frase-portada">
                             <p>
                                 <img src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-apertura.svg" alt="" /> <br />
-                                Todos somos mortales, <br /> hasta el primer beso y la segunda copa de vino <br />
+                                Y así empieza nuestro, <br /> <i>Felices para siempre</i> <br />
                                 <img src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-cierre.svg" alt="" />
                             </p>
                         </div>

@@ -1,11 +1,20 @@
+import Play from '../../src/img/play.svg'
+
 const BackgroundMusic = () => {
     return (
-        <audio
-            className=''
-            src="https://invitacioncarlosykelly.com.co/media/Intro.mp3"
-            autoPlay={true}
-            loop={true}
-        />
+        <>
+            <div id="controlador-musica">
+                <div id="play-pause-music" data-estado-music="pause" className="music-anim-icon">
+                    <img src={Play} alt="" />
+                </div>
+            </div>
+
+            <audio
+                src="../media/Intro.mp3"
+                autoPlay={true}
+                loop={true}
+            />
+        </>
     );
 };
 

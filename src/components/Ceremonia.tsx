@@ -56,7 +56,7 @@ export const Ceremonia: FC<Props> = ({ handleShow3 }) => {
                         <div className="info-col">
                             <div className="info-box">
                                 <h6>Día</h6>
-                                <p>Sábado 31 de Mayo - 05:00 PM</p>
+                                <p>Sábado 31 de Mayo - 05:30 PM</p>
                             </div>
 
                             <div className="info-box">
@@ -81,7 +81,7 @@ export const Ceremonia: FC<Props> = ({ handleShow3 }) => {
                         <div className="info-col">
                             <div className="info-box">
                                 <h6>Día</h6>
-                                <p>Sábado 31 de Mayo  - 07:00 PM</p>
+                                <p>Sábado 31 de Mayo  - 07:30 PM</p>
                             </div>
 
                             <div className="info-box">
