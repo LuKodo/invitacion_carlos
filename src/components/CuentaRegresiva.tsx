@@ -51,7 +51,7 @@ export const CuentaRegresiva = () => {
         <div className="row d-flex justify-content-center align-items-center">
           <div className="box-aros d-flex justify-content-center align-items-center">
             <div className="box-circulo text-center">
-              <span className="falta">Falta</span>
+              <span className="falta">Faltan</span>
               <div id="reloj" className="reloj">
                 <div id="dias" className="reloj-col">
                   <span className="number">{timeLeft.days}</span>

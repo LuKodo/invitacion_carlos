@@ -25,9 +25,17 @@ export const Portada = () => {
 
                         <div className="box-frase-portada">
                             <p>
-                                <img src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-apertura.svg" alt="" /> <br />
-                                Y así empieza nuestro, <br /> <i>Felices para siempre</i> <br />
-                                <img src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-cierre.svg" alt="" />
+                                <img
+                                    src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-apertura.svg"
+                                    alt=""
+                                    className="me-2"
+                                />
+                                Y así empieza nuestro, <br /> <i>Felices para siempre</i>
+                                <img
+                                    src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-cierre.svg"
+                                    alt=""
+                                    className="ms-2"
+                                />
                             </p>
                         </div>
 

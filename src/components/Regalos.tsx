@@ -9,7 +9,9 @@ export const Regalos = () => {
         <div className="row text-center d-flex justify-content-center align-items-center">
           <h2 className="title">Lluvia de Sobres</h2>
           <p className="subtitle">
-            Si deseas regalarnos algo más que tu hermosa presencia...
+            "Su presencia es el mejor regalo,
+            pero si desean envolvernos en sorpresas,
+            un pequeño sobre será nuestro tesoro"
           </p>
 
           <div className="w-100">
