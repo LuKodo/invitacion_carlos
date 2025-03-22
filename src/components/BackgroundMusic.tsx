@@ -9,15 +9,14 @@ const BackgroundMusic = () => {
             }}
         >
             <iframe
-                id="player-musica-fondo"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/dXNeYHDhqbg?si=s0GaXxoFtkctWNP9&amp;controls=0;autoplay=1;loop=1;origin=https://invitacioncarlosykelly.com.co;enablejsapi=1"
+                title="YouTube video player"
                 frameBorder="0"
-                allowFullScreen
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="Ed Sheeran - Perfect (Lyrics)"
-                width="10"
-                height="10"
-                src="https://www.youtube.com/embed/?playlist=EH30RAXnRWs&amp;loop=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.invitacioncarlosykelly.com.co&amp;widgetid=1&amp;forigin=https%3A%2F%2Fwww.invitacioncarlosykelly.com.co&amp;aoriginsup=1&amp;vf=1"
+                allowFullScreen
             ></iframe>
         </div>
     );
