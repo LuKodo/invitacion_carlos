@@ -8,7 +8,9 @@ const BackgroundMusic = () => {
                 pointerEvents: "none"
             }}
         >
-            <iframe src="https://invitacioncarlosykelly.com.co/media/Intro.mp3" width="640" height="480" allow="autoplay"></iframe>
+            <audio controls autoPlay>
+                <source src="https://invitacioncarlosykelly.com.co/media/Intro.mp3" type="audio/mpeg"></source>
+            </audio>
         </div>
     );
 };
