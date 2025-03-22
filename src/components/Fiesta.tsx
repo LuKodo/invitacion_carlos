@@ -1,6 +1,3 @@
-import animTips from "../img/anim_tips.svg";
-import animMusica from "../img/anim_music.svg";
-import animVestuario from "../img/anim_vestuario.svg";
 import Vestuario from "./Animations/Vestuario";
 import Tips from "./Animations/Tips";
 
@@ -21,7 +18,7 @@ export const Fiesta = () => {
                                 <Vestuario />
                             </div>
 
-                            <p>Formal </p>
+                            <p>Tipo Coctel </p>
                         </div>
                     </div>
 
