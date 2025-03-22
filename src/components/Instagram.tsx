@@ -18,7 +18,7 @@ export const Instagram = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://www.instagram.com/"
+              href="https://web.dotstheapp.com/a?groupId=1737644&code=Wap330GB&dlBy=carlosportoperez"
               className="title"
             >
               #LovebaCK
@@ -27,14 +27,7 @@ export const Instagram = () => {
           <br />
 
           <div className="col mt-4">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.instagram.com/"
-              className="boton w-100"
-            >
-              Ver en Instagram
-            </a>
+            <img src="images/ig.jpg" alt="" className="w-25" />
           </div>
         </div>
       </div>

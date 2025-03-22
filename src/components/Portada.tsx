@@ -1,5 +1,7 @@
 import ScrollArrow from "./Animations/ScrollArrow";
-import { FlorIzqSup, FlorDerInf, FlorIzqInf } from "./Animations/Flores";
+import { FlorIzqSup, FlorDerInf, FlorIzqInf } from "./Animations/Flores"
+import ComillaApertura from "../img/comilla-apertura.svg";
+import ComillaCierre from "../img/comilla-cierre.svg";
 
 export const Portada = () => {
     return (
@@ -26,13 +28,13 @@ export const Portada = () => {
                         <div className="box-frase-portada">
                             <p>
                                 <img
-                                    src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-apertura.svg"
+                                    src={ComillaApertura}
                                     alt=""
                                     className="me-2"
                                 />
                                 Y así empieza nuestro, <br /> <i>Felices para siempre</i>
                                 <img
-                                    src="https://www.fixdate.io/modelo-invitacion/30/img/comilla-cierre.svg"
+                                    src={ComillaCierre}
                                     alt=""
                                     className="ms-2"
                                 />
