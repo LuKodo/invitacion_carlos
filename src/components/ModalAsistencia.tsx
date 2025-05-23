@@ -32,7 +32,7 @@ export const ModalAsistencia: FC<Props> = ({ show, handleClose }) => {
     }
 
     useEffect(() => {
-        if (doc === '') {clear(); return};
+        if (doc === '') { clear(); return };
         db(doc).then((res) => {
             if (res.rows.length === 0) {
                 setUser(null)
@@ -92,30 +92,40 @@ export const ModalAsistencia: FC<Props> = ({ show, handleClose }) => {
 
                     <div className="modal-body">
                         <div className="formulario-content">
-                            <form id="formAsistencia">
-                                <div className="form-group">
-                                    <input type="text" value={doc} onChange={(e) => setDoc(e.target.value)} className="form-control" id="nombreAsistente" name="nombre" placeholder="Ingrese su código de reserva" />
-                                </div>
+                            <div className="form-group">
+                                <input type="text" value={doc} onChange={(e) => setDoc(e.target.value)} className="form-control" id="nombreAsistente" name="nombre" placeholder="Ingrese su código de reserva" />
+                            </div>
 
-                                <input id="eventoAsistencia" type="hidden" name="evento" value="Ceremonia" />
-                            </form>
+                            <input id="eventoAsistencia" type="hidden" name="evento" value="Ceremonia" />
 
                             <div className="row">
-                                <Col>
+                                <Col md={6}>
                                     {user && user.length > 0 && (
                                         <div className="fw-bold fs-3 title">
                                             {`Cupo Máximo: ${user[0].cupomaximo}`}
                                         </div>
                                     )}
                                 </Col>
-                                <Col sm={12} md={6}>
+                                <Col md={6}>
                                     {user && user.length > 0 && (
-                                        <div className="">
-                                            {user.map((item) => (
-                                                <div className="fw-bold fs-3 mb-0 mt-0">
-                                                    <span className="fs-6 d-flex align-items-center">{'Invitado: '}<span className="title small fs-3">{`  ${item.nombre}`}</span></span>
-                                                </div>
-                                            ))}
+                                        <div className="fw-bold fs-3 mb-0 mt-0">
+                                            <span className="fs-6 d-flex align-items-center">{'Invitado: '}<span className="title small fs-3">{`  ${user[0].nombre}`}</span></span>
+                                        </div>
+                                    )}
+                                </Col>
+                            </div>
+                            <div className="row">
+                                <Col md={6}>
+                                    {user && user.length > 0 && (
+                                        <div className="fw-bold fs-3 title">
+                                            {`Mesa: ${user[0].mesa}`}
+                                        </div>
+                                    )}
+                                </Col>
+                                <Col md={6}>
+                                    {user && user.length > 1 && (
+                                        <div className="fw-bold fs-3 mb-0 mt-0">
+                                            <span className="fs-6 d-flex align-items-center">{'Invitado: '}<span className="title small fs-3">{`  ${user[1].nombre}`}</span></span>
                                         </div>
                                     )}
                                 </Col>
